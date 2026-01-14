@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>Pagină web simplă</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f6f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 350px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        p {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Calculator simplu</h1>
+
+        <input type="number" id="input1" placeholder="Introdu primul număr">
+        <input type="number" id="input2" placeholder="Introdu al doilea număr">
+
+        <button onclick="calculeaza()">Calculează suma</button>
+
+        <p id="rezultat">Rezultatul va apărea aici</p>
+    </div>
+
+    <script>
+        function calculeaza() {
+            const a = Number(document.getElementById("input1").value);
+            const b = Number(document.getElementById("input2").value);
+
+            if (isNaN(a) || isNaN(b)) {
+                document.getElementById("rezultat").textContent =
+                    "Te rog introdu două numere valide.";
+                return;
+            }
+
+            document.getElementById("rezultat").textContent =
+                "Rezultatul este: " + (a + b);
+        }
+    </script>
+
+</body>
+</html>
